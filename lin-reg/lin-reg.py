@@ -8,7 +8,7 @@ slope, intercept, relation, p, std_err = stats.linregress(x, y)
 
 
 def graph(x):
-    return slope * x + intercept
+  return slope * x + intercept
 
 model = list(map(graph, x))
 plt.scatter(x, y)
