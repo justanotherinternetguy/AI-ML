@@ -1,4 +1,5 @@
 from dataset import train_data, test_data
+from rnn import RNN
 
 # pre-processing of data
 
@@ -31,3 +32,14 @@ def createInputs(text):
     v[word_to_idx[w]] = 1
     inputs.append(v)
   return inputs
+
+def softmax(xs):
+  # softmax func to input arr
+  return np.exp(xs) / sum(np.exp(xs))
+
+rnn = RNN(vocab_size, 2)
+
+inputs = createInputs('i am very good')
+out, h = rnn.forward(inputs)
+probs = softmax(out)
+print(probs) # [[0.49999588] [0.50000412]]
