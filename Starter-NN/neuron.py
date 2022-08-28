@@ -42,7 +42,6 @@ class Neuron:
 
 weights = np.array([0, 1])
 bias = 4
-
 n1 = Neuron(weights, bias)
 
 x = np.array([2, 3])

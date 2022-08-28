@@ -2,4 +2,5 @@
 
 import std/[complex, math, fenv]
 
-proc sigmoid(x: int): float
+proc sigmoid(x: float): float = 
+  return 1 / (1 + pow(E, float(-x)))
