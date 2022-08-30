@@ -2,18 +2,21 @@
 
 import numpy as np
 
+
 def sigmoid(x):
-  # Function: f(x) = 1 / (1 + e^(-x))
-  return 1 / (1 + np.exp(-x))
+    # Function: f(x) = 1 / (1 + e^(-x))
+    return 1 / (1 + np.exp(-x))
+
 
 class Neuron:
-  def __init__(self, weights, bias):
-    self.weights = weights;
-    self.bias = bias;
+    def __init__(self, weights, bias):
+        self.weights = weights
+        self.bias = bias
 
-  def feedforward(self, inputs):
-    dotted_total_val = np.dot(self.weights, inputs) + self.bias
-    return sigmoid(dotted_total_val)
+    def feedforward(self, inputs):
+        dotted_total_val = np.dot(self.weights, inputs) + self.bias
+        return sigmoid(dotted_total_val)
+
 
 weights = np.array([0, 1])
 bias = 4
@@ -21,7 +24,7 @@ bias = 4
 n1 = Neuron(weights, bias)
 
 x = np.array([2, 3])
-print("Single neuron: " , n1.feedforward(x)) # 0.9990889488055994
+print("Single neuron: ", n1.feedforward(x))  # 0.9990889488055994
 
 # Create a hidden layer as well as + neurons
 # x1, x2 (input) --> h1, h2 (hidden) --> o1 (output)
@@ -47,6 +50,7 @@ o1 = f(w * [h1, h2] + b)
 = 0.7216
 """
 
+
 class NeuralNetwork:
     """
     - 2 inputs
@@ -57,6 +61,7 @@ class NeuralNetwork:
     - constant w = [0, 1]
     - constant b = 0
     """
+
     def __init__(self):
         weights = np.array([0, 1])
         bias = 0
@@ -72,7 +77,7 @@ class NeuralNetwork:
 
         return out_o1
 
-network = NeuralNetwork();
-# x is already defined above
-print("Neural network: " , network.feedforward(x)) # 0.7216325609518421
 
+network = NeuralNetwork()
+# x is already defined above
+print("Neural network: ", network.feedforward(x))  # 0.7216325609518421

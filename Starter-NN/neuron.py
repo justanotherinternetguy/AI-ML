@@ -4,8 +4,8 @@
 # Input * weight
 # + bias constant
 # f() activation
-  # Common activation function is sigmoid
-  # Compression of values between (0, 1)
+# Common activation function is sigmoid
+# Compression of values between (0, 1)
 
 
 # ASSUME
@@ -27,22 +27,25 @@ y = f(w * x + b) = f(7) => (sigmoid) => 0.999
 
 import numpy as np
 
+
 def sigmoid(x):
   # Function: f(x) = 1 / (1 + e^(-x))
-  return 1 / (1 + np.exp(-x))
+    return 1 / (1 + np.exp(-x))
+
 
 class Neuron:
-  def __init__(self, weights, bias):
-    self.weights = weights;
-    self.bias = bias;
+    def __init__(self, weights, bias):
+        self.weights = weights
+        self.bias = bias
 
-  def feedforward(self, inputs):
-    dotted_total_val = np.dot(self.weights, inputs) + self.bias
-    return sigmoid(dotted_total_val)
+    def feedforward(self, inputs):
+        dotted_total_val = np.dot(self.weights, inputs) + self.bias
+        return sigmoid(dotted_total_val)
+
 
 weights = np.array([0, 1])
 bias = 4
 n1 = Neuron(weights, bias)
 
 x = np.array([2, 3])
-print(n1.feedforward(x)) # 0.9990889488055994
+print(n1.feedforward(x))  # 0.9990889488055994
