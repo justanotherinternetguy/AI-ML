@@ -12,6 +12,9 @@ def graph(x):
 
 model = list(map(graph, x))
 
+print("SLOPE: {0}".format(slope))
+
 plt.scatter(x, y)
 plt.plot(x, model)
 plt.show()
+
