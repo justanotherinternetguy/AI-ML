@@ -3,8 +3,6 @@ from numpy.random import randn
 
 
 class RNN:
-    # A many-to-one Vanilla Recurrent Neural Network.
-
     def __init__(self, input_size, output_size, hidden_size=64):
         # Weights
         self.Whh = randn(hidden_size, hidden_size) / 1000

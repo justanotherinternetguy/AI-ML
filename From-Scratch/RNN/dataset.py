@@ -80,4 +80,5 @@ test_data = {
     'this is very bad right now': False,
     'this was good earlier': True,
     'i was not happy and not good earlier': False,
+    'i am very not happy': False,
 }

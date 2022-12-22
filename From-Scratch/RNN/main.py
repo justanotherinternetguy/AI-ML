@@ -1,7 +1,7 @@
 import numpy as np
 import random
 
-from rnn import RNN
+from RNN import RNN
 from dataset import train_data, test_data
 
 # Create the vocabulary.
@@ -75,7 +75,7 @@ def processData(data, backprop=True):
 
 
 # Training loop
-for epoch in range(1000):
+for epoch in range(1500):
     train_loss, train_acc = processData(train_data)
 
     if epoch % 100 == 99:
