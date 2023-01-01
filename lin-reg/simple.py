@@ -48,5 +48,12 @@ for i in range(n):
 r_squared = 1 - (sum_remain / sum_squares)
 print(r_squared)
 
+max_x = np.max(X) + 100
+min_x = np.min(X) - 100
+
+x = np.linspace(np.min(X) - 100, np.max(X) + 100, 1000)
+y = b0 + b1 * x
+
+plt.plot(x, y, color="#ff0000")
 plt.scatter(X, Y)
 plt.show()
