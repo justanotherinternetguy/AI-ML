@@ -60,14 +60,3 @@ y = b0 + b1 * x
 plt.plot(x, y, color="#ff0000")
 plt.scatter(X, Y)
 plt.show()
-
-X = x.reshape((n, 1))
-reg = LinearRegression()
-reg = reg.fit(X, Y)
-Y_pred = reg.predict(X)
-
-mse = mean_squared_error(Y, Y_pred)
-rmse = np.sqrt(mse)
-r2_score = reg.score(X, Y)
-print(rmse)
-print(r2_score)
