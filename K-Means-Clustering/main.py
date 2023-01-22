@@ -10,10 +10,9 @@ CENTERS = 4
 
 # generate
 X_train, true_labels = make_blobs(n_samples=200,
-                  centers=CENTERS,
-                  n_features=2,
-                  cluster_std=1.6,
-                  random_state=42)
+                                  centers=CENTERS,
+                                  cluster_std=1,
+                                  random_state=50)
 
 X_train = StandardScaler().fit_transform(X_train)
 
@@ -81,7 +80,7 @@ sns.scatterplot(
 plt.plot(
     [x for x, _ in km.centroids],
     [y for _, y in km.centroids],
-    '+',
+    'X',
     markersize=10
 )
 
